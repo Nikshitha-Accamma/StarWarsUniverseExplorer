@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/StarWarsUniverseExplorer/static/js/main.860013de.js",
+    "main.js": "/StarWarsUniverseExplorer/static/js/main.b0c19797.js",
     "static/js/453.649d5bf8.chunk.js": "/StarWarsUniverseExplorer/static/js/453.649d5bf8.chunk.js",
     "index.html": "/StarWarsUniverseExplorer/index.html",
-    "main.860013de.js.map": "/StarWarsUniverseExplorer/static/js/main.860013de.js.map",
+    "main.b0c19797.js.map": "/StarWarsUniverseExplorer/static/js/main.b0c19797.js.map",
     "453.649d5bf8.chunk.js.map": "/StarWarsUniverseExplorer/static/js/453.649d5bf8.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.860013de.js"
+    "static/js/main.b0c19797.js"
   ]
 }
