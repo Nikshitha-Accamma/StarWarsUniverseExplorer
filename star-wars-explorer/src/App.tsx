@@ -7,6 +7,7 @@ import CharacterListPage from './pages/CharacterListPage';
 import theme from './theme';
 import { FavouritesProvider } from './context/FavouritesContext';
 import FavoritesListPage from './pages/FavoritesListPage';
+import { PATHS } from './constants/path.constants';
 
 function App() {
     return (
@@ -14,10 +15,10 @@ function App() {
             <FavouritesProvider>
             <CssBaseline />
             <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<CharacterListPage />} />
-                    <Route path="/character/:id" element={<CharacterDetailsPage />} />
-                    <Route path="/favorites" element={<FavoritesListPage />} />
+                    <Routes>
+                        <Route path={PATHS.HOME} element={<CharacterListPage />} />
+                        <Route path={PATHS.CHARACTER_DETAIL} element={<CharacterDetailsPage />} />
+                        <Route path={PATHS.FAVOURITES_LIST} element={<FavoritesListPage />} />
                 </Routes>
                 </BrowserRouter>
             </FavouritesProvider>

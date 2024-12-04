@@ -31,7 +31,7 @@ describe('Footer Component', () => {
         expect(mockOnPageChange).toHaveBeenCalledWith(expect.anything(), 4);
     });
 
-    it('should not not allow selection of pages outside the available range', () => {
+    it('should not allow selection of pages outside the available range', () => {
         render(<Footer totalPages={5} currentPage={1} onPageChange={mockOnPageChange} />);
 
         const nonExistentPageButton = screen.queryByText('6');

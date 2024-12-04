@@ -80,7 +80,7 @@ describe('FavoritesListPage', () => {
             { name: 'Luke Skywalker', url: 'https://swapi.dev/api/people/1/' },
             { name: 'Darth Vader', url: 'https://swapi.dev/api/people/4/' },
         ];
-
+                            
         (useFavourites as jest.Mock).mockImplementation(() => ({
             favourites: mockFavourites,
         }));
