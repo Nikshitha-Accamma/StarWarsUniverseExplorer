@@ -19,7 +19,7 @@ This is a React-based web application that fetches and displays character detail
 - Cypress (for end-to-end testing)
 
 ## Hosted At
-https://Nikshitha-Accammagithub.io/star-wars-explorer
+https://nikshitha-accamma.github.io/StarWarsUniverseExplorer/
 
   
 ## Installation

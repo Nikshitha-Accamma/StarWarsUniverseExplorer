@@ -5,3 +5,6 @@ export const getCharacterIdFromTheUrl = (str: string): number  => {
     }
     return 0;
 };
+
+
+export const isProduction = process.env.NODE_ENV === 'production';
