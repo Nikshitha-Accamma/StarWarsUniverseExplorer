@@ -13,8 +13,8 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <FavouritesProvider>
-            <CssBaseline />
-            <BrowserRouter>
+                <CssBaseline />
+                <BrowserRouter basename={PATHS.BASEPATH}>
                     <Routes>
                         <Route path={PATHS.HOME} element={<CharacterListPage />} />
                         <Route path={PATHS.CHARACTER_DETAIL} element={<CharacterDetailsPage />} />

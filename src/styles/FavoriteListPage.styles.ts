@@ -1,5 +1,5 @@
 import { styled } from '@mui/system';
-import { Grid, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 export const PageWrapper = styled('div')`
     padding: 20px;
