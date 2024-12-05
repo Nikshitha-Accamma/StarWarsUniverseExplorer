@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { MemoryRouter, useNavigate } from 'react-router-dom';
 import { useCharacters } from '../../hooks/useCharacters';
 import CharacterListPage from '../../pages/CharacterListPage';

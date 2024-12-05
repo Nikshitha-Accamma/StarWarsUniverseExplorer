@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, useNavigate } from 'react-router-dom';
+import '@testing-library/jest-dom';
 import { useFavourites } from '../../context/FavouritesContext';
 import FavoritesListPage from '../../pages/FavoritesListPage';
 

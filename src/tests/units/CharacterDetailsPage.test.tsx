@@ -1,11 +1,12 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { MemoryRouter, Route } from 'react-router-dom';
 import { useFavourites } from '../../context/FavouritesContext';
 import { fetchData, getCharacterDetails, getHomeWorld } from '../../services/swapi';
 import CharacterDetailsPage from '../../pages/CharacterDetailsPage';
 
 
-jest.mock('../../ services/swapi');
+jest.mock('../../services/swapi');
 jest.mock('../../context/FavouritesContext');
 
 const mockAddToFavourites = jest.fn();
