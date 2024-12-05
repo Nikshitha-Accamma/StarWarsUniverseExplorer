@@ -16,7 +16,6 @@ This is a React-based web application that fetches and displays character detail
 - TypeScript
 - Material-UI
 - Jest (for unit testing)
-- Cypress (for end-to-end testing)
 
 ## Hosted At
 https://nikshitha-accamma.github.io/StarWarsUniverseExplorer/
@@ -40,7 +39,3 @@ npm start
 4. Run unit tests:
 
 npm test
-
-5. Run end to end tests: 
-
-npm run cypress:open 
