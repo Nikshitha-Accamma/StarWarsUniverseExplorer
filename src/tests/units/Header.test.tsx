@@ -1,7 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import Header from '../../components/Header';
+
 
 const mockNavigate = jest.fn();
 const mockOnSearch = jest.fn();
@@ -9,13 +10,16 @@ const mockOnSearch = jest.fn();
 jest.mock('react-router-dom', () => ({
     useNavigate: () => mockNavigate,
 }));
-
+console.log("Header", <Header onSearch={mockOnSearch} isSearchBarNeeded={true}/>)
 describe('Header Component', () => {
-
     it('should render the header with navigation buttons', () => {
         render(
             <MemoryRouter>
-                <Header onSearch={mockOnSearch} isSearchBarNeeded={true} />
+                <Routes>
+                    <Route>
+                        <Header onSearch={mockOnSearch} isSearchBarNeeded={true} />
+                    </Route>
+                </Routes>
             </MemoryRouter>
         );
 
@@ -26,7 +30,11 @@ describe('Header Component', () => {
     it('should navigate to the home page when "Home" button is clicked', () => {
         render(
             <MemoryRouter>
-                <Header onSearch={mockOnSearch} isSearchBarNeeded={true} />
+                <Routes>
+                    <Route>
+                        <Header onSearch={mockOnSearch} isSearchBarNeeded={true} />
+                    </Route>
+                </Routes>
             </MemoryRouter>
         );
 
@@ -37,7 +45,11 @@ describe('Header Component', () => {
     it('should navigate to the favorites page when "Favorites" button is clicked', () => {
         render(
             <MemoryRouter>
-                <Header onSearch={mockOnSearch} isSearchBarNeeded={true} />
+                <Routes>
+                    <Route>
+                        <Header onSearch={mockOnSearch} isSearchBarNeeded={true} />
+                    </Route>
+                </Routes>
             </MemoryRouter>
         );
 
@@ -48,7 +60,11 @@ describe('Header Component', () => {
     it('should call the onSearch function when typing in the search bar', () => {
         render(
             <MemoryRouter>
-                <Header onSearch={mockOnSearch} isSearchBarNeeded={true} />
+                <Routes>
+                    <Route>
+                        <Header onSearch={mockOnSearch} isSearchBarNeeded={true} />
+                    </Route>
+                </Routes>
             </MemoryRouter>
         );
 
@@ -60,7 +76,11 @@ describe('Header Component', () => {
     it('should not render the search bar when isSearchBarNeeded is false', () => {
         render(
             <MemoryRouter>
-                <Header onSearch={mockOnSearch} isSearchBarNeeded={false} />
+                <Routes>
+                    <Route>
+                        <Header onSearch={mockOnSearch} isSearchBarNeeded={false} />
+                    </Route>
+                </Routes>
             </MemoryRouter>
         );
 
@@ -70,7 +90,11 @@ describe('Header Component', () => {
     it('should render the search bar when isSearchBarNeeded is true', () => {
         render(
             <MemoryRouter>
-                <Header onSearch={mockOnSearch} isSearchBarNeeded={true} />
+                <Routes>
+                    <Route>
+                        <Header onSearch={mockOnSearch} isSearchBarNeeded={true} />
+                    </Route>
+                </Routes>
             </MemoryRouter>
         );
 

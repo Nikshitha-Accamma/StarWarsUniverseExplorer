@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { MemoryRouter, Route } from 'react-router-dom';
-import { useFavourites } from '../../context/FavouritesContext';
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { FavouritesProvider, useFavourites } from '../../context/FavouritesContext';
 import { fetchData, getCharacterDetails, getHomeWorld } from '../../services/swapi';
 import CharacterDetailsPage from '../../pages/CharacterDetailsPage';
 
@@ -41,9 +41,13 @@ beforeEach(() => {
 describe('CharacterDetailsPage', () => {
     it('should display loading indicator initially', () => {
         render(
-            <MemoryRouter initialEntries={['/character/1']}>
-                <Route path="/character/:id" element={<CharacterDetailsPage />} />
-            </MemoryRouter>
+            <FavouritesProvider>
+                <MemoryRouter initialEntries={['/character/1']}>
+                    <Routes>
+                        <Route path="/character/:id" element={<CharacterDetailsPage />} />
+                    </Routes>
+                    </MemoryRouter>
+            </FavouritesProvider>
         );
 
         expect(screen.getByRole('progressbar')).toBeInTheDocument();
@@ -52,7 +56,9 @@ describe('CharacterDetailsPage', () => {
     it('should render character details once fetched', async () => {
         render(
             <MemoryRouter initialEntries={['/character/1']}>
-                <Route path="/character/:id" element={<CharacterDetailsPage />} />
+                <Routes>
+                    <Route path="/character/:id" element={<CharacterDetailsPage />} />
+                </Routes>
             </MemoryRouter>
         );
 
@@ -67,9 +73,13 @@ describe('CharacterDetailsPage', () => {
 
     it('should toggle favourite button correctly', async () => {
         render(
-            <MemoryRouter initialEntries={['/character/1']}>
-                <Route path="/character/:id" element={<CharacterDetailsPage />} />
-            </MemoryRouter>
+            <FavouritesProvider>
+                <MemoryRouter initialEntries={['/character/1']}>
+                    <Routes>
+                        <Route path="/character/:id" element={<CharacterDetailsPage />} />
+                    </Routes>
+                </MemoryRouter>
+            </FavouritesProvider>
         );
 
         await waitFor(() => screen.findByText('Luke Skywalker'));
@@ -93,9 +103,13 @@ describe('CharacterDetailsPage', () => {
 
     it('should update height correctly', async () => {
         render(
-            <MemoryRouter initialEntries={['/character/1']}>
-                <Route path="/character/:id" element={<CharacterDetailsPage />} />
-            </MemoryRouter>
+            <FavouritesProvider>
+                <MemoryRouter initialEntries={['/character/1']}>
+                    <Routes>
+                        <Route path="/character/:id" element={<CharacterDetailsPage />} />
+                    </Routes>
+                </MemoryRouter>
+            </FavouritesProvider>
         );
 
         await waitFor(() => screen.findByText('Luke Skywalker'));
